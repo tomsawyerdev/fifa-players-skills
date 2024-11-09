@@ -1,0 +1,32 @@
+.session-main-layout{
+  margin-top: 50px;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;  
+}
+
+.session-form {
+    display: flex;
+    flex-flow: column;
+    min-width: 150px;
+    max-width: 250px;
+    width: 100%;
+  }
+  
+  .imput-full-width {
+    width: 100%;
+  }
+
+  .button{
+    color: white;
+    border-radius: 3px;
+    
+  }
+
+  .msgerror{
+     color: red;
+  }
+
+  .msgok{
+    color: blue;
+ }

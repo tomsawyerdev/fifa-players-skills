@@ -1,0 +1,77 @@
+<form [formGroup]="playerHeaderForm"  (ngSubmit)="clickedSave()">
+<div class="edit-header-layout">
+    <div class="header-row">
+        <mat-form-field class="input-text-width">
+            <mat-label>Name</mat-label>
+            <input matInput name="long_name" [(ngModel)]="player.long_name" formControlName="long_name"  >
+          </mat-form-field>
+
+          <mat-form-field class="input-autocomplete">
+            <mat-label>Country</mat-label>
+            <input type="text" matInput [formControl]="countriesControl" [matAutocomplete]="auto"  [(ngModel)]="player.nationality_name" >
+            <mat-autocomplete #auto="matAutocomplete"   >
+              @for (option of filteredCountries | async; track option) {
+                <mat-option (onSelectionChange)="onCountrySelectionChange(option)" [value]="option">{{option}}</mat-option>
+              }
+            </mat-autocomplete>
+          </mat-form-field>
+
+         
+          <mat-form-field class="input-autocomplete">
+            <mat-label>Team</mat-label>
+            <input type="text" matInput [formControl]="teamsControl" [matAutocomplete]="auto2" [(ngModel)]="player.club_name"  >
+            <mat-autocomplete #auto2="matAutocomplete" >
+              @for (option of filteredTeams | async; track option) {
+                <mat-option [value]="option">{{option}}</mat-option>
+              }
+            </mat-autocomplete>
+          </mat-form-field>
+
+
+
+      
+          <mat-form-field class="input-number-width">
+            <mat-label >Jersey</mat-label>
+            <input matInput name="club_jersey_number" [(ngModel)]="player.club_jersey_number" formControlName="club_jersey_number"  >
+          </mat-form-field>
+
+          <mat-form-field class="input-text-width">
+            <mat-label>Dob YYYY-MM-DD</mat-label>
+            <input matInput name="dob" [(ngModel)]="player.dob" formControlName="dob"  >
+          </mat-form-field>
+          
+          
+
+          <mat-button-toggle-group name="Gender" class="gender-toggle"  [(ngModel)]="player.gender" formControlName="gender">          
+            <mat-button-toggle value="m">Male</mat-button-toggle>
+            <mat-button-toggle value="f">Female</mat-button-toggle>
+          </mat-button-toggle-group>
+     
+      
+        <mat-form-field class="input-number-width">
+          <mat-label>Value</mat-label>
+          <input matInput name="value_eur" [(ngModel)]="player.value_eur" formControlName="value_eur"  >
+        </mat-form-field>
+        <mat-form-field class="input-number-width">
+          <mat-label>Height</mat-label>
+          <input matInput name="height_cm" [(ngModel)]="player.height_cm" formControlName="height_cm"  >
+        </mat-form-field>
+        <mat-form-field class="input-number-width">
+          <mat-label>Weight</mat-label>
+          <input matInput name="weight_kg" [(ngModel)]="player.weight_kg" formControlName="weight_kg"  >
+        </mat-form-field>
+
+        <mat-form-field class="input-text-width">
+          <mat-label>Photo url</mat-label>
+          <input matInput name="player_face_url" [(ngModel)]="player.player_face_url" formControlName="player_face_url"  >
+        </mat-form-field>
+        
+
+        <span class="spacer"></span>                
+              
+        <button mat-flat-button class="button" type="submit" [disabled]="!playerHeaderForm.valid">Save</button>
+  </div>
+
+    
+</div>
+</form>

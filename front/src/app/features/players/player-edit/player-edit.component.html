@@ -1,0 +1,165 @@
+<div class="card-col-text">
+       
+
+
+   <app-player-edit-header [player]="playerHeader" (emitterClickSave)="listenSave($event)" ></app-player-edit-header>
+   <div class="card-layout" style="min-height: 25px;"> 
+    {{message}}
+   </div>
+  <div class="card-layout">
+     <div style="padding-top: 5px; padding-bottom: 5px;">
+      <p class="mat-headline-medium">Players Radar Charts </p>
+     </div> 
+     
+          <div class="card-row">
+            <div class="card-item">
+                <div class="card-chart">Atacking              
+                <canvas baseChart 
+                [options]="radarChartOptions"
+                [type]="'radar'"
+                [data]="radarAttackData"           
+                >
+                </canvas>           
+                </div>
+                <div class="card-sliders">
+                  Crossing
+                  <mat-slider min="0" max="100" step="1" showTickMarks discrete  (input)="onChangeAttack($event)">
+                    <input matSliderThumb [(ngModel)]="attacking_crossing"  >
+                  </mat-slider>
+                  Finishing
+                  <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeAttack($event)">
+                    <input matSliderThumb  [(ngModel)]="attacking_finishing">
+                  </mat-slider>
+                  Heading accuracy
+                  <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeAttack($event)">
+                    <input matSliderThumb [(ngModel)]="attacking_heading_accuracy">
+                  </mat-slider>
+                  Short passing
+                  <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeAttack($event)">
+                    <input matSliderThumb [(ngModel)]="attacking_short_passing">
+                  </mat-slider>
+                  Volleys
+                  <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeAttack($event)">
+                    <input matSliderThumb [(ngModel)]="attacking_volleys">
+                  </mat-slider>
+                  
+                </div>
+            </div>
+          <div class="card-item">
+                <div class="card-chart">Skills
+                  <canvas baseChart 
+                  [options]="radarChartOptions"
+                  [type]="'radar'"
+                  [data]="radarSkillsData"        
+                  > </canvas>  
+                </div>
+                <div class="card-sliders">
+                  Dribbling
+                  <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeSkill($event)">
+                    <input matSliderThumb [(ngModel)]="skill_dribbling">
+                  </mat-slider>
+                  Curve
+                  <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeSkill($event)">
+                    <input matSliderThumb [(ngModel)]="skill_curve">
+                  </mat-slider>
+                  Accuracy
+                  <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeSkill($event)">
+                    <input matSliderThumb [(ngModel)]="skill_fk_accuracy">
+                  </mat-slider>
+                  Long passing
+                  <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeSkill($event)">
+                    <input matSliderThumb [(ngModel)]="skill_long_passing">
+                  </mat-slider>
+                  Ball control
+                  <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeSkill($event)">
+                    <input matSliderThumb [(ngModel)]="skill_ball_control">
+                  </mat-slider>
+                </div>
+          </div>
+         </div>   
+
+        
+
+         <!-- ROW -------------- -->
+
+     
+        
+
+         
+         <div class="card-row">
+          <div class="card-item">
+          <div class="card-chart">Move
+            <canvas baseChart 
+            [options]="radarChartOptions"
+            [type]="'radar'"
+            [data]="radarMoveData"        
+            >
+            </canvas>
+          </div>
+          <div class="card-sliders">
+
+          Acceleration
+          <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeMovement($event)">
+            <input matSliderThumb [(ngModel)]="movement_acceleration">
+          </mat-slider>
+          Sprint speed
+          <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeMovement($event)">
+            <input matSliderThumb [(ngModel)]="movement_sprint_speed">
+          </mat-slider>
+          Agility
+          <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeMovement($event)">
+            <input matSliderThumb [(ngModel)]="movement_agility">
+          </mat-slider>
+          Reactions
+          <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeMovement($event)">
+            <input matSliderThumb [(ngModel)]="movement_reactions">
+          </mat-slider>
+          Balance
+          <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangeMovement($event)">
+            <input matSliderThumb [(ngModel)]="movement_balance">
+          </mat-slider>
+          
+          
+
+          </div>
+        </div>
+        <div class="card-item">     
+         <div class="card-chart">Power
+          <canvas baseChart #chartPower
+          [options]="radarChartOptions"
+          [type]="'radar'"
+          [data]="radarPowerData"        
+          >
+          </canvas>
+         </div>        
+         <div class="card-sliders">
+         Shot power
+         <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangePower($event)" >
+          <input matSliderThumb [(ngModel)]="power_shot_power">
+        </mat-slider>
+         Jumping
+         <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangePower($event)">
+          <input matSliderThumb [(ngModel)]="power_jumping">
+        </mat-slider>
+         Stamina
+         <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangePower($event)">
+          <input matSliderThumb [(ngModel)]="power_stamina">
+        </mat-slider>
+         Strength
+         <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangePower($event)">
+          <input matSliderThumb [(ngModel)]="power_strength">
+        </mat-slider>
+         Long shots
+         <mat-slider min="0" max="100" step="1" showTickMarks discrete (input)="onChangePower($event)">
+          <input matSliderThumb [(ngModel)]="power_long_shots">
+        </mat-slider>
+      </div>
+
+    
+
+
+      </div>  
+    </div>
+
+<div>
+       

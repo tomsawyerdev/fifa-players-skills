@@ -1,0 +1,28 @@
+<div class="card-layout" >
+    <div class="card-col-text">
+       
+          <mat-card-title ><div class="nowrap"><b>{{player.long_name}}</b></div></mat-card-title>
+          <mat-card-subtitle><b>Country:</b> {{player.nationality_name}}</mat-card-subtitle>
+          <mat-card-subtitle><b>Club:</b> {{player.club_name}}</mat-card-subtitle>
+          <mat-card-subtitle><b>Jersey:</b> {{player.club_jersey_number}}</mat-card-subtitle>
+          <mat-card-subtitle><b>Valuation:</b> {{player.value_eur}}</mat-card-subtitle>
+          <mat-card-subtitle><b>Height(cm):</b> {{player.height_cm}}</mat-card-subtitle>
+          <mat-card-subtitle><b>Weight(kg):</b> {{player.weight_kg}}</mat-card-subtitle>
+          <mat-card-subtitle><b>Dob:</b> {{player.dob}}</mat-card-subtitle>
+          <mat-card-subtitle><b>Gender:</b> {{ player.gender=="m" ? "Masculine": "Femenine"}}</mat-card-subtitle>
+       
+    </div>
+    <div class="card-col-img">
+        <img  mat-card-image src="{{player.player_face_url}}" width="140px" style="margin: 4px;">
+        <div style="display: flex; flex-direction:  row-reverse">
+          <button mat-icon-button class="button" >
+            <mat-icon  style="transform:scale(1.1);margin-top: 0px;" >delete</mat-icon> 
+          </button> 
+        <button mat-icon-button class="button" (click)="clickedEdit()">
+          <mat-icon  style="transform:scale(1.1);margin-top: 0px;" >edit</mat-icon> 
+        </button> 
+        
+     </div>
+    </div>
+  </div>
+

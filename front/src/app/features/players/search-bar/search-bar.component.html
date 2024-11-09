@@ -1,0 +1,44 @@
+
+<div class="search-bar-layout">
+    <div class="search-bar-row">
+        <mat-form-field class="input-width">
+            <mat-label>Name</mat-label>
+            <input matInput  name="name" [(ngModel)]="name" >
+          </mat-form-field>
+
+          <mat-form-field class="input-width">
+            <mat-label>Country</mat-label>
+            <input type="text" matInput [formControl]="countriesControl" [matAutocomplete]="auto"  [(ngModel)]="country">
+            <mat-autocomplete #auto="matAutocomplete"   >
+              @for (option of filteredCountries | async; track option) {
+                <mat-option (onSelectionChange)="onCountrySelectionChange(option)" [value]="option">{{option}}</mat-option>
+              }
+            </mat-autocomplete>
+          </mat-form-field>
+
+          <mat-form-field class="input-width">
+            <mat-label>Team</mat-label>
+            <input type="text" matInput [formControl]="teamsControl" [matAutocomplete]="auto2" [(ngModel)]="team">
+            <mat-autocomplete #auto2="matAutocomplete" >
+              @for (option of filteredTeams | async; track option) {
+                <mat-option [value]="option">{{option}}</mat-option>
+              }
+            </mat-autocomplete>
+          </mat-form-field>
+
+    
+          <mat-button-toggle-group name="Gender" class="gender-toggle" [(ngModel)]="gender">
+            <mat-button-toggle value="">Both</mat-button-toggle>
+            <mat-button-toggle value="m">Male</mat-button-toggle>
+            <mat-button-toggle value="f">Female</mat-button-toggle>
+          </mat-button-toggle-group>
+           
+    
+        <button mat-flat-button class="button" (click)="clickedSearch()">Search</button>
+        <span class="spacer"></span>
+        <button mat-flat-button class="button" (click)="clickedExport()">Export</button>
+        <button mat-flat-button class="button" (click)="clickedCreate()">Create</button>
+        
+   </div>
+    
+</div>

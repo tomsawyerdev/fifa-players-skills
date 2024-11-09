@@ -1,0 +1,84 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+   
+
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .mainUnused {
+    width: 100%;
+    min-height: 100%;
+    border: 2px solid rebeccapurple;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    box-sizing: inherit;
+    
+  }
+
+  main {
+    display: 'flex';
+    flex-direction: column; 
+    /*background: cyan;  */
+    /*border: 2px solid rebeccapurple;*/
+    max-width: 100vw;
+    /*height:  100vh;    */
+    padding: 0px;
+    margin: 0px;    
+    box-sizing: border-box
+  }
+
+  .nav {
+    
+    /*border: 2px solid green;    */
+    width: 100%;    
+    height: 40px;
+    box-sizing: border-box;
+    padding-bottom: 0px;
+  }
+
+  .content {
+   /* display: flex;*/
+    /*justify-content: center;*/
+    /*border: 4px solid green;   */ 
+    width: 100%;  
+    box-sizing: border-box;  
+    padding-top: 5px ;
+    padding-left: 10px ;
+    padding-right: 10px;
+    padding-bottom: 15px;
+   /* height: calc(100vh - 50px)*/
+  }
+
+
+ 
+</style>
+
+<main class="main">
+  <div class="nav">
+   <app-nav></app-nav>
+  </div>
+  <div class="content">
+   
+    <router-outlet></router-outlet>
+ 
+  </div>
+</main>
+
+
+

@@ -1,0 +1,21 @@
+<div class="players-main-layout">
+    <div class="players-content">
+
+        <app-search-bar   (emitterClickSearch)="handleSearchEvent($event)" ></app-search-bar>
+        <app-players-table  [dataSource]="items" ></app-players-table>
+        <mat-paginator 
+                    class="demo-paginator"
+                    (page)="handlePageEvent($event)"
+                    [length]="length"
+                    [pageSize]="pageSize"               
+                    [showFirstLastButtons]="true"
+                    [pageSizeOptions]="[10,20,30,40]"
+                    [hidePageSize]="false"
+                    [pageIndex]="pageIndex"
+                    aria-label="Select page">
+        </mat-paginator>
+       
+    </div>    
+</div>    
+
+

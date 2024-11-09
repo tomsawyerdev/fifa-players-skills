@@ -1,0 +1,61 @@
+version: "3"
+
+services:
+  db:
+    container_name: fifa-db
+    restart: always
+    image: mysql:5.7           
+    environment:
+     - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} 
+     - MYSQL_DATABASE=${MYSQL_DATABASE}
+     - MYSQL_USER=${MYSQL_USER}
+     - MYSQL_PASS=${MYSQL_PASS}
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    ports:
+      - "3306:3306"   
+    volumes: 
+      - data_vol:/var/lib/mysql     
+      - ./db/csv/players_data.csv:/var/lib/mysql-files/players_data.csv
+      - ./db/csv/countries_data.csv:/var/lib/mysql-files/countries_data.csv
+      - ./db/csv/teams_data.csv:/var/lib/mysql-files/teams_data.csv      
+      - ./db/sql_scripts/users_table.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./db/sql_scripts/players_table.sql:/docker-entrypoint-initdb.d/2.sql      
+      - ./db/sql_scripts/countries_table.sql:/docker-entrypoint-initdb.d/3.sql
+      - ./db/sql_scripts/teams_table.sql:/docker-entrypoint-initdb.d/4.sql
+      - ./db/shell_scripts/create_user.sh:/docker-entrypoint-initdb.d/5.sh
+      
+
+  api:
+    container_name: fifa-api
+    build:
+      context: .
+      dockerfile: ./api/api.dockerfile    
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
+    depends_on:
+      db:
+        condition: service_started
+    environment:          
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASS=${MYSQL_PASS}
+  front:
+    container_name: fifa-front
+    build:
+      context: .
+      dockerfile: ./front/front.dockerfile    
+    
+    ports:
+      - "4200:4200"
+    depends_on:
+      api:
+        condition: service_started
+  
+
+volumes:
+    data_vol:
+      name: fifa-db-volume
+      driver: local

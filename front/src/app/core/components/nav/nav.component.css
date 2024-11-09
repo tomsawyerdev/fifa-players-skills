@@ -1,0 +1,24 @@
+.topnav {
+    
+   
+    height: 100%;
+    padding-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(61, 61, 236);
+
+    }
+
+.nav-button {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+.example-spacer {
+    flex: 1 1 auto; 
+      }
+
+.nav-base-color {
+        color: #efefef;
+    }      

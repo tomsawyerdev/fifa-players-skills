@@ -1,0 +1,23 @@
+.selection-layout{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border: 1px solid #d0d0d0;   
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 2px;
+    
+
+}
+
+.button{
+    
+    border-radius: 3px;
+    margin: 10px;
+    
+  }
+
+
+  .spacer {
+    flex: 1 1 auto; 
+     }  

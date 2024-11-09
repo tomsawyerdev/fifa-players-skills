@@ -1,0 +1,56 @@
+
+<div class="detail-header" >
+    
+  @for (p of players; track p) {
+   <app-player-detail-header [player]="p" ></app-player-detail-header>
+   }
+  </div>
+
+       
+  <div class="card-layout">
+    <div style="padding-top: 5px; padding-bottom: 5px;">
+      <p class="mat-headline-medium">Players Radar Charts </p>
+     </div> 
+     
+          <div class="card-row">
+            <div class="card">Atacking
+           
+            <canvas baseChart 
+            [options]="radarChartOptions"
+            [type]="'radar'"
+            [data]="radarAttackData"           
+            >
+            </canvas>           
+            </div>
+
+          
+         <div class="card">Skills
+          <canvas baseChart 
+          [options]="radarChartOptions"
+          [type]="'radar'"
+          [data]="radarSkillsData"        
+          >
+          </canvas>
+         </div>
+         <div class="card">Move
+          <canvas baseChart 
+          [options]="radarChartOptions"
+          [type]="'radar'"
+          [data]="radarMoveData"        
+          >
+          </canvas>
+         </div>
+         <div class="card">Power
+          <canvas baseChart #chartPower
+          [options]="radarChartOptions"
+          [type]="'radar'"
+          [data]="radarPowerData"        
+          >
+          </canvas>
+         </div>
+
+        </div>
+       </div>
+          
+
+

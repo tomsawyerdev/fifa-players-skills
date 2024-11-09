@@ -1,0 +1,16 @@
+<div class="session-main-layout">  
+
+<form class="session-form" (ngSubmit)="onSubmit()">
+  <p>Login:</p>
+      <mat-form-field class="input-full-width">
+        <mat-label>Username</mat-label>
+        <input matInput required="true"  name="username" [(ngModel)]="username" >
+      </mat-form-field>
+      <mat-form-field class="input-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput required="true"  type="password" name="password" [(ngModel)]="password" placeholder="supersecret">
+      </mat-form-field>
+      <button mat-flat-button class="button" type="submit">Log in</button>
+      <p [style.color]="error ? 'red' : 'blue'" >{{message}}</p>
+</form>
+<div>  

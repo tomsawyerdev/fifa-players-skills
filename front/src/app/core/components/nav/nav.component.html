@@ -1,0 +1,31 @@
+<mat-toolbar class="topnav" >
+
+  
+    <a mat-button (click)="navigate('/')" >
+      <span class="mat-title-large nav-base-color" >Home</span>
+       <mat-icon class="nav-base-color " style="transform:scale(1.5);margin-top: -5px;" >home</mat-icon>    
+    </a>
+
+    <a mat-button (click)="navigate('/players')" >
+      <span class="mat-title-large nav-base-color" >Players</span>
+       <mat-icon class="nav-base-color " style="transform:scale(1.5);margin-top: -5px;" >sports_soccer</mat-icon>    
+    </a>
+   
+    <span class="example-spacer"></span>
+
+    <a mat-button *ngIf="!isLogged()" (click)="navigate('/session')"  >
+      <mat-icon class="nav-base-color " style="transform:scale(1.5);margin-top: -5px;" >login</mat-icon>    
+      <span class="mat-title-large nav-base-color" >Login</span>     
+    </a>
+    <span *ngIf="isLogged()" class="mat-title-large nav-base-color" style="margin-top: -5px;"  >{{getUsername()}}</span>
+
+    <a mat-button *ngIf="isLogged()" (click)="click_logout()" >
+      <mat-icon class="nav-base-color " style="transform:scale(1.5);margin-top: -5px;" >logout</mat-icon>    
+      <span class="mat-title-large nav-base-color" >Logout</span>     
+    </a>
+       
+    
+    
+    
+  </mat-toolbar>
+  
