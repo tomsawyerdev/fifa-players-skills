@@ -24,11 +24,12 @@
 # Search Selection
 ![Alt text](presentacion/1_3_SearchSeleccion.png)
 
+# Search Comparador
+![Alt text](presentacion/2_0_Comparador2.png)
+
 # Export as CSV
 ![Alt text](presentacion/1_4_Export.png)
 
-# Search Comparador
-![Alt text](presentacion/2_0_Comparador2.png)
 
 # Edicion de Jugador
 ![Alt text](presentacion/3_0_Edicion.png)

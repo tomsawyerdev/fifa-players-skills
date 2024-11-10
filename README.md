@@ -8,6 +8,7 @@ El challenge se compone de tres partes Api, Database y Front
 y se utiliza docker-compose para los tres servicios.
 Las claves se leen de un archivo de environment: *.env*
 
+
 ## Api
 
 La api corre en **Node Express** y utiliza **Sequelize** como orm, los jason web tokens son generados con
@@ -43,6 +44,14 @@ y se tomo una muestra aproximada de 1000 items de cada uno y luego se unieron lo
 dataset en un csv que es importado cuando se levanta la base. 
  
  Para facilitar la interface de las busquedas y de la edicion, se crearon dos tablas una de paises y otra de equipos .
+
+# Capturas de pantalla
+
+Ver el archivo Presentacion.md en este mismo directorio
+
+[Presentacion.md](Presentacion.md)
+
+
 
 # Instrucciones para levantar los servicios 
 
