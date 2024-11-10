@@ -24,7 +24,7 @@
 # Search Selection
 ![Alt text](presentacion/1_3_SearchSeleccion.png)
 
-# Search Comparador
+# Comparador de Jugadores
 ![Alt text](presentacion/2_0_Comparador2.png)
 
 # Export as CSV
