@@ -15,10 +15,10 @@ var config = {};
 
     //console.log("WARNING: config env: TODO BORRAR");
      
-    config.dbuser= process.env.MYSQL_USER;// TODO borrar
-    config.dbhost= process.env.MYSQL_HOST;//127.0.0.1
-    config.dbdatabase= process.env.MYSQL_DATABASE;
-    config.dbpassword= process.env.MYSQL_PASS; //NO PASSWORD, para seguir la misma definicion que MYSQL
+    config.dbuser= process.env.MYSQL_USER || 'apiuser';// TODO borrar
+    config.dbhost= process.env.MYSQL_HOST || '127.0.0.1';
+    config.dbdatabase= process.env.MYSQL_DATABASE || 'fifa';
+    config.dbpassword= process.env.MYSQL_PASS || 'supersecret'; //NO PASSWORD, para seguir la misma definicion que MYSQL
     config.dbport= 3306;
 
     //console.log("config:",config);

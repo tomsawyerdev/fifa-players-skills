@@ -26,7 +26,9 @@ router.post('/',  validator.playerNew, controller.create);
 
 // Update 
 
-router.post('/:id', validator.playerNew, controller.update);//validator.playerNew,
+// celebrate change string to number,
+// sin el validator sequelize lo castea sin problema
+router.post('/:id', validator.playerNew,controller.update);//
 
 
 

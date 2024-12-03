@@ -123,7 +123,9 @@ const create = async (req, res)=>{
 const update = async (req, res)=>{ 
     const id = Number.parseInt(req.params.id);
     const data = req.body;
-    console.log("   player update, player:",id);
+    console.log("   Player update, player id:",id);
+    //console.log("        height_cm:", data.height_cm, typeof(data.height_cm));
+    //console.log("        weight_kg:", data.weight_kg, typeof(data.weight_kg));
     if (Number.isNaN(id)) {
         res.status(400).json({status:400, message:'Malformed url'});
         return;

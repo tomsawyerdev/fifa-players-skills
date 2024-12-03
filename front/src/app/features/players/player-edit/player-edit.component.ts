@@ -217,26 +217,37 @@ export class PlayerEditComponent {
     
      var player = this.packPlayer(header);
       //console.log("Player-edit, listenSave, packPlayer:",player);
+
+      // Arreglar el bad request codigo:400
      
      if (this.mode=="edit"){
         //console.log("Player-edit, updPlayer:",this.id,player);
         this.api.updPlayer(this.id,player).subscribe({
           next: (resp) => { this.message = resp.message + (resp.errors ? `: ${resp.errors}`:'') ;                          
                             //console.log("updPlayer next:", resp.message,resp.errors);    
-                          }});
+                          },
+          error: (err) => { // Recibe un 400
+                            this.message = err.error.message + err.error.errors;
+                            console.error("Receive 400, Error:",err);                         
+                        }});
       }
      else
      {
         //console.log("Player-edit, newPlayer");
         this.api.newPlayer(player).subscribe({
           next: (resp) => { this.message = resp.message + (resp.errors ? `: ${resp.errors}`:'') ;   
-                            if(resp.status==201){
+                            if(resp.status==201){ // Object was created
                             this.mode="edit" ;
                             this.id = resp.id;
                             }                      
-
                             //console.log("newPlayer next:", resp.message,resp.errors);    
-                          }});
+                          }
+                          ,
+          error: (err) => { // Recibe un 400
+                            this.message = err.error.message + err.error.errors;
+                            console.error("Receive 400, Error:",err);                         
+                        }
+                        });
      }
      
 

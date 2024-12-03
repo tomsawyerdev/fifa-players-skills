@@ -59,11 +59,11 @@ export class PlayerEditHeaderComponent {
   teamsOptions:string[]=[];//intermediate storage
   filteredTeams! : Observable<string[]>; // ! parche
   //----------------------------
-
+  long_name_ctrl= new FormControl('',[Validators.required, Validators.minLength(4)])
 
   playerHeaderForm = new FormGroup({ 
 
-            long_name: new FormControl('',[Validators.required, Validators.minLength(4)]),
+            long_name: this.long_name_ctrl,
             nationality_name: this.countriesControl,
             club_name : this.teamsControl,
             club_jersey_number : new FormControl(0,[Validators.required, Validators.min(0)]),
@@ -129,9 +129,10 @@ export class PlayerEditHeaderComponent {
     const filterValue = value.toLowerCase();
     return this.teamsOptions.filter(option => option.toLowerCase().includes(filterValue));
   }  
+  //--------------------------------
 
   //-----------------------------------------
-
+  
 
 
    clickedSave(){ 

@@ -99,7 +99,7 @@ Ver el archivo Presentacion.md en este mismo directorio
 
 *Warning: En el Authorization usar comillas dobles*
 
-```curl -I 'http://localhost:3000/players?country=Argentina'  -H 'Content-Type: application/json' -H "Authorization:Bearer $API_JWT_TOKEN"```
+```curl 'http://localhost:3000/players?country=Argentina'  -H 'Content-Type: application/json' -H "Authorization:Bearer $API_JWT_TOKEN"```
 
 ```curl 'http://localhost:3000/players?country=Argentina&team=Boca'  -H 'Content-Type: application/json' -H "Authorization:Bearer $API_JWT_TOKEN"```
 

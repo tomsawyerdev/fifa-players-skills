@@ -1,9 +1,10 @@
 <form [formGroup]="playerHeaderForm"  (ngSubmit)="clickedSave()">
 <div class="edit-header-layout">
+
     <div class="header-row">
-        <mat-form-field class="input-text-width">
+        <mat-form-field class="input-text-width" >
             <mat-label>Name</mat-label>
-            <input matInput name="long_name" [(ngModel)]="player.long_name" formControlName="long_name"  >
+            <input matInput  name="long_name" [(ngModel)]="player.long_name" formControlName="long_name"  >
           </mat-form-field>
 
           <mat-form-field class="input-autocomplete">
@@ -32,7 +33,7 @@
       
           <mat-form-field class="input-number-width">
             <mat-label >Jersey</mat-label>
-            <input matInput name="club_jersey_number" [(ngModel)]="player.club_jersey_number" formControlName="club_jersey_number"  >
+            <input matInput name="club_jersey_number" type="number" [(ngModel)]="player.club_jersey_number" formControlName="club_jersey_number"  >
           </mat-form-field>
 
           <mat-form-field class="input-text-width">
@@ -50,15 +51,15 @@
       
         <mat-form-field class="input-number-width">
           <mat-label>Value</mat-label>
-          <input matInput name="value_eur" [(ngModel)]="player.value_eur" formControlName="value_eur"  >
+          <input matInput name="value_eur" type="number" [(ngModel)]="player.value_eur" formControlName="value_eur"  >
         </mat-form-field>
         <mat-form-field class="input-number-width">
           <mat-label>Height</mat-label>
-          <input matInput name="height_cm" [(ngModel)]="player.height_cm" formControlName="height_cm"  >
+          <input matInput name="height_cm" type="number" [(ngModel)]="player.height_cm" formControlName="height_cm"  >
         </mat-form-field>
         <mat-form-field class="input-number-width">
           <mat-label>Weight</mat-label>
-          <input matInput name="weight_kg" [(ngModel)]="player.weight_kg" formControlName="weight_kg"  >
+          <input matInput name="weight_kg" type="number" [(ngModel)]="player.weight_kg" formControlName="weight_kg"  >
         </mat-form-field>
 
         <mat-form-field class="input-text-width">
